@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng Dẫn Vào Bếp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: #ff7043; /* Màu cam ấm */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+        }
+        header p {
+            font-size: 18px;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .intro h2 {
+            color: #ff7043;
+        }
+        .recipe-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .recipe {
+            background-color: white;
+            width: 30%;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .recipe img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .recipe h3 {
+            margin-top: 10px;
+            color: #ff5722;
+        }
+        .recipe p {
+            color: #333;
+            font-size: 16px;
+        }
+        .footer {
+            background-color: #ff7043;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .contact-form button {
+            background-color: #ff5722; /* Màu cam đậm */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .contact-form button:hover {
+            background-color: #d45b2a; /* Màu cam tối */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Hướng Dẫn Vào Bếp</h1>
+    <p>Khám phá những công thức nấu ăn đơn giản và ngon miệng!</p>
+</header>
+
+<div class="container">
+    <!-- Giới thiệu -->
+    <div class="intro">
+        <h2>Chào Mừng Bạn Đến Với Cửa Bếp</h2>
+        <p>Chúng tôi cung cấp các công thức nấu ăn dễ dàng, nhanh chóng và ngon miệng cho mọi đối tượng, từ người mới bắt đầu cho đến những đầu bếp chuyên nghiệp. Hãy cùng khám phá các món ăn hấp dẫn ngay bây giờ!</p>
+    </div>
+
+    <!-- Danh sách công thức -->
+    <div class="recipe-list">
+        <div class="recipe">
+            <img src="https://via.placeholder.com/300x300" alt="Món ăn 1">
+            <h3>Canh Chua Cá</h3>
+            <p>Công thức đơn giản để làm món canh chua cá ngon miệng, đậm đà hương vị.</p>
+        </div>
+        <div class="recipe">
+            <img src="https://via.placeholder.com/300x300" alt="Món ăn 2">
+            <h3>Bánh Xèo</h3>
+            <p>Hướng dẫn làm món bánh xèo giòn rụm, thơm ngon, dễ làm ngay tại nhà.</p>
+        </div>
+        <div class="recipe">
+            <img src="https://via.placeholder.com/300x300" alt="Món ăn 3">
+            <h3>Cơm Tấm</h3>
+            <p>Công thức làm cơm tấm với sườn nướng, nước mắm đặc trưng, đậm đà hương vị Việt.</p>
+        </div>
+    </div>
+
+    <!-- Liên hệ -->
+    <div class="contact">
+        <h2>Liên Hệ</h2>
+        <p>Chúng tôi luôn sẵn lòng giải đáp thắc mắc và chia sẻ thêm công thức mới cho bạn. Hãy để lại lời nhắn hoặc câu hỏi của bạn ở dưới đây!</p>
+        <div class="contact-form">
+            <h3>Gửi Tin Nhắn</h3>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Họ và tên" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Nội dung tin nhắn" rows="4" required></textarea>
+                <button type="submit">Gửi Tin Nhắn</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2024 Hướng Dẫn Vào Bếp. Tất cả quyền lợi được bảo vệ.</p>
+</footer>
+
+</body>
+</html>

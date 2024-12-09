@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra Cứu Thông Tin Sách - Thư Viện Đại Học Sư Phạm TP.HCM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #0057b8;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .search-bar {
+            margin-bottom: 20px;
+        }
+        .search-bar input {
+            padding: 10px;
+            width: 80%;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .search-bar button {
+            padding: 10px;
+            background-color: #0057b8;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+        }
+        .search-bar button:hover {
+            background-color: #003d80;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        table th {
+            background-color: #0057b8;
+            color: white;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #0057b8;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Tra Cứu Thông Tin Sách - Thư Viện Đại Học Sư Phạm TP.HCM</h1>
+</header>
+
+<div class="container">
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Nhập tên sách, tác giả hoặc mã số..." />
+        <button onclick="searchBooks()">Tìm Kiếm</button>
+    </div>
+
+    <table id="results-table" style="display: none;">
+        <thead>
+            <tr>
+                <th>Tên Sách</th>
+                <th>Tác Giả</th>
+                <th>Mã Số</th>
+                <th>Nơi Lưu Trữ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Các kết quả tìm kiếm sẽ được thêm vào đây -->
+        </tbody>
+    </table>
+</div>
+
+<div class="footer">
+    <p>&copy; 2024 Đại học Sư Phạm TP.HCM. Mọi quyền được bảo lưu.</p>
+</div>
+
+<script>
+    // Mẫu dữ liệu sách trong thư viện
+    const booksData = [
+        { title: 'Lập Trình Web', author: 'Nguyễn Văn A', code: '12345', location: 'Tầng 3, Kệ 2' },
+        { title: 'Cấu Trúc Dữ Liệu', author: 'Trần Thị B', code: '67890', location: 'Tầng 4, Kệ 1' },
+        { title: 'Hệ Điều Hành', author: 'Phan Minh C', code: '54321', location: 'Tầng 2, Kệ 5' },
+        { title: 'Mạng Máy Tính', author: 'Lê Quang D', code: '11223', location: 'Tầng 1, Kệ 3' },
+    ];
+
+    // Hàm tìm kiếm sách
+    function searchBooks() {
+        const searchQuery = document.getElementById('search-input').value.toLowerCase();
+        const filteredBooks = booksData.filter(book => 
+            book.title.toLowerCase().includes(searchQuery) || 
+            book.author.toLowerCase().includes(searchQuery) ||
+            book.code.includes(searchQuery)
+        );
+
+        displayResults(filteredBooks);
+    }
+
+    // Hàm hiển thị kết quả tìm kiếm
+    function displayResults(books) {
+        const table = document.getElementById('results-table');
+        const tbody = table.querySelector('tbody');
+        tbody.innerHTML = '';
+
+        if (books.length > 0) {
+            books.forEach(book => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${book.title}</td>
+                    <td>${book.author}</td>
+                    <td>${book.code}</td>
+                    <td>${book.location}</td>
+                `;
+                tbody.appendChild(row);
+            });
+            table.style.display = 'table';
+        } else {
+            table.style.display = 'none';
+            alert('Không tìm thấy sách nào với yêu cầu của bạn.');
+        }
+    }
+</script>
+
+</body>
+</html>

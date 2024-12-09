@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa Hàng Tượng Ảnh Công Giáo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+        header {
+            background-color: #8e4f1c; /* Màu nâu ấm */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        header p {
+            font-size: 18px;
+        }
+        .container {
+            width: 85%;
+            margin: 20px auto;
+        }
+        .about, .products, .contact {
+            margin-bottom: 40px;
+        }
+        .about h2, .products h2, .contact h2 {
+            color: #7d4f2f; /* Màu nâu đậm */
+        }
+        .about p, .products p, .contact p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .product {
+            background-color: white;
+            width: 30%;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .product h3 {
+            margin-top: 10px;
+            color: #9c5d3c; /* Màu nâu nhẹ */
+        }
+        .product p {
+            color: #333;
+            font-size: 16px;
+        }
+        .footer {
+            background-color: #8e4f1c; /* Màu nâu ấm */
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .contact-form button {
+            background-color: #9c5d3c; /* Màu nâu nhẹ */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .contact-form button:hover {
+            background-color: #7d4f2f; /* Màu nâu đậm */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Cửa Hàng Tượng Ảnh Công Giáo</h1>
+    <p>Chuyên cung cấp các sản phẩm tượng, ảnh công giáo chất lượng cao, mang đến sự thanh thản và bình an cho gia đình bạn</p>
+</header>
+
+<div class="container">
+    <!-- Giới thiệu -->
+    <div class="about">
+        <h2>Giới Thiệu</h2>
+        <p>Cửa hàng của chúng tôi chuyên cung cấp các sản phẩm tượng và ảnh công giáo như tượng Đức Mẹ, Chúa Giêsu, các thánh, cùng nhiều vật phẩm tín ngưỡng khác. Các sản phẩm đều được làm từ chất liệu cao cấp, thiết kế tinh xảo, mang lại vẻ đẹp trang trọng và phù hợp cho các gia đình Công Giáo.</p>
+    </div>
+
+    <!-- Sản phẩm -->
+    <div class="products">
+        <h2>Sản Phẩm Tượng Ảnh Công Giáo</h2>
+        <div class="product-list">
+            <div class="product">
+                <img src="https://via.placeholder.com/300x300" alt="Tượng Đức Mẹ">
+                <h3>Tượng Đức Mẹ</h3>
+                <p>Tượng Đức Mẹ Maria với thiết kế tinh xảo, chất liệu gỗ cao cấp, tượng trưng cho sự yêu thương và bảo vệ.</p>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/300x300" alt="Tượng Chúa Giêsu">
+                <h3>Tượng Chúa Giêsu</h3>
+                <p>Tượng Chúa Giêsu với phong cách truyền thống, tượng trưng cho lòng bác ái và sự tha thứ.</p>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/300x300" alt="Ảnh Thánh Phaolô">
+                <h3>Ảnh Thánh Phaolô</h3>
+                <p>Ảnh thánh Phaolô được in sắc nét, thích hợp để treo trong gia đình hoặc nhà thờ.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Liên hệ -->
+    <div class="contact">
+        <h2>Liên Hệ</h2>
+        <p>Để biết thêm thông tin chi tiết về sản phẩm hoặc yêu cầu đặt hàng, vui lòng liên hệ với chúng tôi qua form dưới đây hoặc gọi trực tiếp:</p>
+        <p><strong>Số điện thoại:</strong> 090-1234-5678</p>
+        <div class="contact-form">
+            <h3>Gửi Tin Nhắn</h3>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Họ và tên" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Nội dung tin nhắn" rows="4" required></textarea>
+                <button type="submit">Gửi Tin Nhắn</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2024 Cửa Hàng Tượng Ảnh Công Giáo. Tất cả quyền lợi được bảo vệ.</p>
+</footer>
+
+</body>
+</html>

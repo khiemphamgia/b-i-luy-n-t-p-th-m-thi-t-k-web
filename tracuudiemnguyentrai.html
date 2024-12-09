@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra Cứu Kết Quả Học Tập - Trường THPT Nguyễn Trãi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ed1b1b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .search-bar {
+            margin-bottom: 20px;
+        }
+        .search-bar input {
+            padding: 10px;
+            width: 80%;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .search-bar button {
+            padding: 10px;
+            background-color: #ae4f06;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+        }
+        .search-bar button:hover {
+            background-color: #ddf107;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        table th {
+            background-color: #f6a90f;
+            color: white;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e606064d;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Tra Cứu Kết Quả Học Tập - Trường THPT Nguyễn Trãi</h1>
+    <p>TP Biên Hòa, Tỉnh Đồng Nai</p>
+</header>
+
+<div class="container">
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Nhập tên học sinh hoặc mã số học sinh..." />
+        <button onclick="searchResults()">Tìm Kiếm</button>
+    </div>
+
+    <table id="results-table" style="display: none;">
+        <thead>
+            <tr>
+                <th>Tên Học Sinh</th>
+                <th>Mã Số Học Sinh</th>
+                <th>Môn Học</th>
+                <th>Điểm</th>
+                <th>Trạng Thái</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Các kết quả tìm kiếm sẽ được thêm vào đây -->
+        </tbody>
+    </table>
+</div>
+
+<div class="footer">
+    <p>&copy; 2024 Trường THPT Nguyễn Trãi. Mọi quyền được bảo lưu.</p>
+</div>
+
+<script>
+    // Mẫu dữ liệu kết quả học tập của học sinh
+    const studentsResults = [
+        { name: 'Nguyễn Văn A', studentId: 'A12345', subject: 'Toán', score: 8.5, status: 'Đậu' },
+        { name: 'Trần Thị B', studentId: 'B23456', subject: 'Văn', score: 6.0, status: 'Đậu' },
+        { name: 'Phan Minh C', studentId: 'C34567', subject: 'Lý', score: 4.5, status: 'Rớt' },
+        { name: 'Lê Quang D', studentId: 'D45678', subject: 'Hóa', score: 7.0, status: 'Đậu' },
+        { name: 'Ngô Minh E', studentId: 'E56789', subject: 'Sinh', score: 5.5, status: 'Rớt' },
+    ];
+
+    // Hàm tìm kiếm kết quả học tập
+    function searchResults() {
+        const searchQuery = document.getElementById('search-input').value.toLowerCase();
+        const filteredResults = studentsResults.filter(student => 
+            student.name.toLowerCase().includes(searchQuery) || 
+            student.studentId.includes(searchQuery)
+        );
+
+        displayResults(filteredResults);
+    }
+
+    // Hàm hiển thị kết quả tìm kiếm
+    function displayResults(results) {
+        const table = document.getElementById('results-table');
+        const tbody = table.querySelector('tbody');
+        tbody.innerHTML = '';
+
+        if (results.length > 0) {
+            results.forEach(result => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${result.name}</td>
+                    <td>${result.studentId}</td>
+                    <td>${result.subject}</td>
+                    <td>${result.score}</td>
+                    <td>${result.status}</td>
+                `;
+                tbody.appendChild(row);
+            });
+            table.style.display = 'table';
+        } else {
+            table.style.display = 'none';
+            alert('Không tìm thấy kết quả học tập với yêu cầu của bạn.');
+        }
+    }
+</script>
+
+</body>
+</html>
